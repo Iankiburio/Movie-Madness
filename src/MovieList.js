@@ -2,14 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import MovieSearch from './MovieSearch';
 import './MovieMadness.css';
+import NavBar from './NavBar'; // Import the NavBar component
 
 function MovieList() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetchMovies();
-  }, []);
+  const [showRecentlySearched, setShowRecentlySearched] = useState(false); // New state for showing recently searched movies
 
   const fetchMovies = () => {
     fetch('http://www.omdbapi.com/?s=movie&apikey=5908eaa3')
@@ -44,6 +42,11 @@ function MovieList() {
       });
   };
 
+  useEffect(() => {
+    fetchMovies();
+  }, []);
+
+  // ... Rest of your code ...
 
   const handleSearch = (searchInput) => {
     setLoading(true);
@@ -64,6 +67,9 @@ function MovieList() {
               console.log('Movies with updated data', moviesWithUpdatedData);
               setMovies(moviesWithUpdatedData.slice(0, 10) || []);
               setLoading(false);
+
+              // Show recently searched movies when a search is performed
+              setShowRecentlySearched(true);
             });
         } else {
           setMovies([]);
@@ -79,6 +85,7 @@ function MovieList() {
 
   return (
     <div>
+      <NavBar showRecentlySearchedMovies={() => setShowRecentlySearched(true)} />
       <h1 className='movies'>Movies Madness</h1>
       <MovieSearch onSearch={handleSearch} />
       {loading ? (
@@ -91,15 +98,22 @@ function MovieList() {
                 <img src={movie.Poster} alt={movie.Title} className="movie-image" />
                 <p className="movie-title">{movie.Title}</p>
               </Link>
-              
             </li>
           ))}
         </ul>
       ) : (
         <p>No movies found.</p>
       )}
+      
+      {/* Render recently searched movies when the state is true */}
+      {showRecentlySearched && (
+        <div className="recently-searched">
+          {/* Add your code to display recently searched movies here */}
+        </div>
+      )}
     </div>
   );
 }
 
 export default MovieList;
+
