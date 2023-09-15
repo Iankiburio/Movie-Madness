@@ -73,6 +73,9 @@ function MovieList() {
                 }))
               );
               setLoading(false);
+
+              // Show recently searched movies when a search is performed
+              setShowRecentlySearched(true);
             });
         } else {
           setMovies([]);
@@ -115,8 +118,16 @@ function MovieList() {
       ) : (
         <p>No movies found.</p>
       )}
+      
+      {/* Render recently searched movies when the state is true */}
+      {showRecentlySearched && (
+        <div className="recently-searched">
+          {/* Add your code to display recently searched movies here */}
+        </div>
+      )}
     </div>
   );
 }
 
 export default MovieList;
+
