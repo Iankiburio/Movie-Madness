@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import MovieSearch from './MovieSearch';
-import './MovieList.css'; // Import CSS file
+import './MovieList.css';
 
 function MovieList() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [showBackgroundImage, setShowBackgroundImage] = useState(true); // Add state variable
+  const [showBackgroundImage, setShowBackgroundImage] = useState(true);
+  const [showRecentlySearched, setShowRecentlySearched] = useState(false);
 
-  const history = useHistory(); // Initialize useHistory
+  const history = useHistory();
 
   useEffect(() => {
     fetchMovies();
@@ -91,7 +92,7 @@ function MovieList() {
 
   return (
     <div className="movie-list-container">
-      <div className={`space-below-title ${showBackgroundImage ? 'show-image' : ''}`}> {/* Conditionally add 'show-image' class */}
+      <div className={`space-below-title ${showBackgroundImage ? 'show-image' : ''}`}>
         <h1 className="movies">Movie Madness</h1>
       </div>
       <MovieSearch onSearch={handleSearch} />
@@ -105,7 +106,7 @@ function MovieList() {
                 to={`/movie/${movie.imdbID}`}
                 className="movie-link"
                 onClick={() => {
-                  history.push(`/movie/${movie.imdbID}`); // Use history.push() to navigate
+                  history.push(`/movie/${movie.imdbID}`);
                   setShowBackgroundImage(false);
                 }}
               >
@@ -119,7 +120,6 @@ function MovieList() {
         <p>No movies found.</p>
       )}
       
-      {/* Render recently searched movies when the state is true */}
       {showRecentlySearched && (
         <div className="recently-searched">
           {/* Add your code to display recently searched movies here */}
@@ -130,4 +130,3 @@ function MovieList() {
 }
 
 export default MovieList;
-
