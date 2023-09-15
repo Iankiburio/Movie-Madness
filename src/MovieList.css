@@ -1,0 +1,138 @@
+.movie-list-container {
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    padding: 40px;
+    background-color: #000;
+  }
+  
+  .movie-list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .movies {
+    font-size: 40px;
+    background: none;
+    border: none;
+    color: #780d0d;
+    cursor: pointer;
+  }
+  
+  .movie-list {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .movie-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: calc(50% - 5px);
+  }
+  
+  .movie-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .movie-image {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .movie-title {
+    font-size: 16px;
+    color: #fff;
+    margin: 0;
+    font-weight: bold;
+  }
+  
+
+
+.movie-list-container {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .movie-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .movie-item {
+    margin-bottom: 10px;
+    width: calc(50% - 5px); /* Calculate width to display two movies in each line */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .movie-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .movie-image {
+    width: 400px;
+    height: auto;
+    margin-bottom: 10px; /* Add margin at the bottom of the movie image */
+  }
+  
+  .movie-title {
+    margin: 0;
+    font-weight: bold; /* Add styling to the movie title */
+  }
+  
+  .space-below-title {
+    position: relative;
+    height: 500px;
+    background-image: url('/public/cinema-with-popcorn-box.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Updated from align-items: center; */
+    justify-content: flex-start; /* Updated from justify-content: center; */
+    text-align: left; /* Updated from text-align: center; */
+    padding: 20px; /* Add padding to give space around the title */
+  }
+  
+  .movies {
+    font-size: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #0882ed;
+    margin: 0; /* Remove margin to make the title flush with the top left corner */
+  }
+  
+  
+  .space-below-title::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust the transparency by changing the last value */
+    z-index: -1;
+  }
+  

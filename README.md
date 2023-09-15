@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Movie Madness Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a Full Stack application that allows users to search for movies and view their details.
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+To run this application on your machine, you need to have the following dependencies installed:
 
-### `npm start`
+- Node.js
+- npm (Node Package Manager)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Please follow these steps to install and run the application:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository:
 
-### `npm test`
+git clone [repository-url]
+2. Install the dependencies:
+cd movie-madness-app npm install
+3. Start the development server:
+npm start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The application will be running at [http://localhost:3000](http://localhost:3000).
 
-### `npm run build`
+## Dependencies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The Movie Madness application relies on the following dependencies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `react` and `react-dom`: These are the core libraries for React.
+- `react-autosuggest`: A library for creating autosuggest input fields in React.
+- `react-router-dom`: A library for routing in React applications.
+- `node-fetch`: A library for making HTTP requests.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To install the dependencies, you can run the following command in your terminal:
+`npm install react react-dom react-autosuggest react-router-dom node-fetch`
 
-### `npm run eject`
+## MovieSearch Component
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The `MovieSearch` component is responsible for the search functionality in the application. It makes API requests to retrieve movie suggestions based on the user's search term. The component uses the `react-autosuggest` library for creating the autosuggest input field and the `node-fetch` library for making HTTP requests.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## MovieList Component
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The `MovieList` component is responsible for displaying a list of movies based on the user's search. It receives an array of movie objects and renders them in a list format. Each movie in the list is a clickable link that redirects the user to the `MovieDetails` page for that specific movie. The component utilizes the `react-router-dom` library for routing.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Please note that you'll need to pass the movie list as a prop to the `MovieList` component and make sure you set up the routing correctly to navigate to the `MovieDetails` component when a movie is clicked.
 
-## Learn More
+## MovieDetails Component
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The `MovieDetails` component is responsible for displaying the details of a selected movie. It retrieves the movie details based on the movie's ID from the URL. The component uses the `react-router-dom` library for routing and the `node-fetch` library for making HTTP requests.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Please make sure to provide a valid API key for the movie database API in the respective components' code.
 
-### Code Splitting
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Contributions are welcome! If you have any ideas or improvements for this project, feel free to submit a pull request.
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the [MIT License](LICENSE)
