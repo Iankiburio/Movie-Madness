@@ -66,14 +66,10 @@ function NavBar() {
         </div>
       )}
       <button className="nav-button">
-        <Link to="/recently-searched">Recently Searched </Link>
+        <Link to="/watchlist">My Watchlist</Link>
       </button>
     </div>
   );
 }
 
 export default NavBar;
-
-
-
-
