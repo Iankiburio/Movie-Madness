@@ -14,7 +14,7 @@ function MovieDetails() {
   const history = useHistory();
 
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=ae57e943f23fd67a50f1579e4ed5e7c5`)
+    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=f4c776b1055af7aa537d751aa6f0a329`)
       .then((response) => response.json())
       .then((data) => {
         setMovie(data);
