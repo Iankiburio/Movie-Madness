@@ -1,21 +1,25 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import MovieList from './MovieList';
 import MovieDetails from './MovieDetails';
 import NavBar from './NavBar';
+import WatchList from './WatchList';
 
+import AppContext from './context/AppContext';
 
 function App() {
+  const [watchList,setWatchlist]=useState([])
   return (
-    <Router>
-      <div>
-      <NavBar/>
-        <Switch>
-          <Route exact path="/" component={MovieList} />
-          <Route exact path="/movie/:id" component={MovieDetails} />
-        </Switch>
-      </div>
-    </Router>  );
+    <AppContext.Provider value={{watchList,setWatchlist}}><Router>
+    <div>
+    <NavBar/>
+      <Switch>
+        <Route exact path="/" component={MovieList} />
+        <Route exact path="/movie/:id" component={MovieDetails} />
+        <Route path="/watchList" component={WatchList} />
+      </Switch>
+    </div>
+  </Router></AppContext.Provider>  );
 }
 
 export default App;

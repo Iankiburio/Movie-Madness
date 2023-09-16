@@ -1,10 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import './MovieMadness.css';
 
+import AppContext from './context/AppContext';
+
 function MovieDetails() {
+
+  const {setWatchlist,watchList}=useContext(AppContext)
+
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
+  const history = useHistory();
 
   useEffect(() => {
     fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=ae57e943f23fd67a50f1579e4ed5e7c5`)
@@ -18,6 +25,37 @@ function MovieDetails() {
       document.body.className = '';
     };
   }, [id]);
+
+
+    // Function to add the current movie to the watchlist
+    const addToWatchlist = (movie) => {
+      // const watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+      
+      // // Check if the movie is already in the watchlist to avoid duplicates
+      // if (!watchlist.some((movie) => movie.id === id)) {
+      //   watchlist.push({ id, title: movie.title });
+      //   localStorage.setItem('watchlist', JSON.stringify(watchlist));
+      //   alert('Movie added to your watchlist!');
+      // } else {
+      //   alert('This movie is already in your watchlist.');
+      // }
+      // history.push('/watchlist');
+      let found=false
+      for(let i=0;i<watchList.length;i++){
+        let doc=watchList[i]
+        if(movie.id===doc.id){
+          found=true
+          break
+        }
+      }
+
+      if(found ===false){
+        setWatchlist((c)=>[...c,movie])
+      }
+      history.push('/watchlist');
+    };
+
+    console.log(watchList)
 
   return (
     <div className="movie-details">
@@ -45,6 +83,7 @@ function MovieDetails() {
             alt={movie.title}
             className="movie-details__poster"
           />
+           <button onClick={()=>addToWatchlist(movie)}>Add to Watchlist</button>
         </div>
       ) : (
         <p>Loading...</p>

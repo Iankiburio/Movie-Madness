@@ -2,11 +2,13 @@
 .top-bar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; 
   background-color: #992a2a;
-  padding: 1px;
+  padding: 4px;
+
   color: rgb(173, 173, 203);
 }
+
 
 .nav-button {
   background: none;
