@@ -20,7 +20,7 @@ const MovieSearch = ({ onSearch }) => {
     e.preventDefault();
 
     try {
-      const API_KEY = 'ae57e943f23fd67a50f1579e4ed5e7c5';
+      const API_KEY = 'f4c776b1055af7aa537d751aa6f0a329';
       const response = await fetch(
         `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchTerm}`
       );
@@ -50,7 +50,7 @@ const MovieSearch = ({ onSearch }) => {
 
   const handleSuggestionsFetchRequested = async ({ value }) => {
     try {
-      const API_KEY = 'ae57e943f23fd67a50f1579e4ed5e7c5';
+      const API_KEY = 'f4c776b1055af7aa537d751aa6f0a329';
       const response = await fetch(
         `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${value}`
       );
