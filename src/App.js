@@ -2,7 +2,6 @@ import React,{useState} from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import MovieList from './MovieList';
 import MovieDetails from './MovieDetails';
-import NavBar from './NavBar';
 import WatchList from './WatchList';
 
 import AppContext from './context/AppContext';
@@ -12,7 +11,6 @@ function App() {
   return (
     <AppContext.Provider value={{watchList,setWatchlist}}><Router>
     <div>
-    <NavBar/>
       <Switch>
         <Route exact path="/" component={MovieList} />
         <Route exact path="/movie/:id" component={MovieDetails} />

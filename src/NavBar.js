@@ -4,17 +4,17 @@ import './NavBar.css';
 
 function NavBar() {
   return (
-    <div className="top-bar">
-      <div className="left-links">
+    <ul className="navbar">
+      <li>
         <Link to="/upcoming">Upcoming</Link>
-      </div>
-      <div className="center-link">
+      </li>
+      <li>
         <Link to="/new-releases">New Releases</Link>
-      </div>
-      <div className="right-link">
+      </li>
+      <li>
         <Link to="/watchlist">My Watchlist</Link>
-      </div>
-    </div>
+      </li>
+    </ul>
   );
 }
 

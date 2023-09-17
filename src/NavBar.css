@@ -1,26 +1,24 @@
-.top-bar {
-    background-color: black;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .left-links {
-    align-self: flex-start;
-    font-size: 23px;
-    color: black;
-  }
-  
-  .center-link {
-    align-self: center;
-    font-size: 20px;
-  }
-  
-  .right-link {
-    align-self: flex-end;
-    font-size: 20px;
-  }
+.navbar {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  position: relative;
+  top: 20px;
+}
 
-  .upcoming{
-    justify-content: center;
-  }
-  
+.navbar li {
+  margin: 0 10px;
+  font-size: 25px;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: #fff7f7;
+}
+
+.navbar li a:hover {
+  color: #f00;
+}

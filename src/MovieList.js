@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import MovieSearch from './MovieSearch';
+import NavBar from './NavBar';
 import './MovieList.css';
 
 function MovieList() {
@@ -16,12 +17,16 @@ function MovieList() {
   }, []);
 
   const fetchMovies = () => {
-    fetch('https://api.themoviedb.org/3/movie/popular?api_key=f4c776b1055af7aa537d751aa6f0a329')
+    fetch(
+      'https://api.themoviedb.org/3/movie/popular?api_key=f4c776b1055af7aa537d751aa6f0a329'
+    )
       .then((response) => response.json())
       .then((data) => {
         if (data.results && data.results.length > 0) {
           const moviesWithPosters = data.results.map((movie) => {
-            return fetch(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=f4c776b1055af7aa537d751aa6f0a329`)
+            return fetch(
+              `https://api.themoviedb.org/3/movie/${movie.id}?api_key=f4c776b1055af7aa537d751aa6f0a329`
+            )
               .then((response) => response.json())
               .then((movieData) => {
                 return {
@@ -52,15 +57,18 @@ function MovieList() {
   const handleSearch = (searchInput) => {
     setLoading(true);
 
-    fetch(`https://api.themoviedb.org/3/search/movie?api_key=f4c776b1055af7aa537d751aa6f0a329&query=${searchInput}`)
+    fetch(
+      `https://api.themoviedb.org/3/search/movie?api_key=f4c776b1055af7aa537d751aa6f0a329&query=${searchInput}`
+    )
       .then((response) => response.json())
       .then((data) => {
         console.log('Search API response', data);
 
         if (data.results && data.results.length > 0) {
           const moviesWithPosters = data.results.map((movie) => {
-            return fetch(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=f4c776b1055af7aa537d751aa6f0a329`)
-              .then((response) => response.json());
+            return fetch(
+              `https://api.themoviedb.org/3/movie/${movie.id}?api_key=f4c776b1055af7aa537d751aa6f0a329`
+            ).then((response) => response.json());
           });
 
           Promise.all(moviesWithPosters)
@@ -94,6 +102,7 @@ function MovieList() {
     <div className="movie-list-container">
       <div className={`space-below-title ${showBackgroundImage ? 'show-image' : ''}`}>
         <h1 className="movies">Movie Madness</h1>
+        <NavBar/>
       </div>
       <MovieSearch onSearch={handleSearch} />
       {loading ? (
@@ -119,7 +128,7 @@ function MovieList() {
       ) : (
         <p>No movies found.</p>
       )}
-      
+
       {showRecentlySearched && (
         <div className="recently-searched">
           {/* Add your code to display recently searched movies here */}

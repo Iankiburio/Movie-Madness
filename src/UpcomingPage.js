@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './NavBar.css'
+import NavBar from './NavBar';
 
 function UpcomingPage() {
   const [upcomingMovies, setUpcomingMovies] = useState([]);
