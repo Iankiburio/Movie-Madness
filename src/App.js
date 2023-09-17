@@ -7,6 +7,7 @@ import UpcomingPage from './UpcomingPage';
 
 
 import AppContext from './context/AppContext';
+import NewReleases from './NewReleasesPage';
 
 function App() {
   const [watchList,setWatchlist]=useState([])

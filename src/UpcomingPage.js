@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
-
+import './upcoming.css';
 
 
 function UpcomingPage() {
@@ -23,18 +22,21 @@ function UpcomingPage() {
   return (
     <div>
       <h2 className='upcoming'>Upcoming Movies</h2>
-      <ul>
+      <div className='movies-container'>
         {upcomingMovies.map((movie) => (
-          <li key={movie.id}>{movie.title}</li>
+          <div key={movie.id} className='movie-card'>
+            <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+            <div className='movie-details'>
+              <h3>{movie.title}</h3>
+              <p>{movie.overview}</p>
+              <h4>Release Date</h4>
+              <p>{movie.release_date}</p>
+            </div>
+          </div>
         ))}
-      </ul>
       </div>
-
-
-    );
-
-   
-
+    </div>
+  );
 }
 
 export default UpcomingPage;
