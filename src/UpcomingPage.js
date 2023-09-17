@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import NavBar from './NavBar';
+
+
+
 
 function UpcomingPage() {
   const [upcomingMovies, setUpcomingMovies] = useState([]);
@@ -26,8 +28,13 @@ function UpcomingPage() {
           <li key={movie.id}>{movie.title}</li>
         ))}
       </ul>
-    </div>
-  );
+      </div>
+
+
+    );
+
+   
+
 }
 
 export default UpcomingPage;

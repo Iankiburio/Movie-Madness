@@ -4,6 +4,8 @@ import MovieList from './MovieList';
 import MovieDetails from './MovieDetails';
 import WatchList from './WatchList';
 
+
+
 import AppContext from './context/AppContext';
 
 function App() {
