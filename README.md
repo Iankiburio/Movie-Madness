@@ -49,6 +49,22 @@ The `MovieDetails` component is responsible for displaying the details of a sele
 
 Please make sure to provide a valid API key for the movie database API in the respective components' code.
 
+
+## NavBar
+
+The NavBar component is a reusable React component that represents a navigation bar for a web application. It provides a set of links to navigate between different sections or pages of the application.
+
+## Upcoming Page
+
+The Upcoming Page is a React component that displays a list of upcoming movies fetched from the The Movie Database (TMDb) API. It showcases the movie poster, title, overview, and release date.
+
+## WatchList
+
+The Watchlist component is a React functional component that displays a user's watchlist of movies. It utilizes the context API from the AppContext component to access the watchList state.
+
+## TopRated
+
+The TopRatedPage component is a React functional component that displays a list of top-rated movies. It retrieves the movie data from the TMDB API and renders the movie posters, titles, overviews, and release dates.
 ## Contributing
 
 Contributions are welcome! If you have any ideas or improvements for this project, feel free to submit a pull request.
