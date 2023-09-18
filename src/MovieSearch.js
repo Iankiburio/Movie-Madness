@@ -79,7 +79,9 @@ const MovieSearch = ({ onSearch }) => {
           alt={suggestion.title}
         />
       )}
-      <span className="suggestion-title">{suggestion.title}</span>
+      <span className="suggestion-title" style={{ marginLeft: '10px' }}>
+        {suggestion.title}
+      </span>
       <style jsx>{`
         .react-autosuggest__suggestion-markup {
           display: none;

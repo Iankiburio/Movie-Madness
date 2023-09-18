@@ -7,7 +7,7 @@ import UpcomingPage from './UpcomingPage';
 
 
 import AppContext from './context/AppContext';
-import NewReleases from './NewReleasesPage';
+import TopRatedPage from './TopRatedPage';
 
 function App() {
   const [watchList,setWatchlist]=useState([])
@@ -19,6 +19,7 @@ function App() {
         <Route exact path="/movie/:id" component={MovieDetails} />
         <Route path="/watchList" component={WatchList} />
         <Route path="/upcoming" component={UpcomingPage} />
+        <Route path="/toprated" component={TopRatedPage}/>
       </Switch>
     </div>
   </Router></AppContext.Provider>  );

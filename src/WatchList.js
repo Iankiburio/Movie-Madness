@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import AppContext from './context/AppContext';
+import './upcoming.css';
 
 
 
@@ -8,7 +9,7 @@ const Watchlist = () => {
 
   return (
     <div>
-      <h2>My Watchlist</h2>
+      <h2 className='watchlist'>My Watchlist</h2>
       <ul className="movie-list">
         {watchList.map((movie, index) => (
           <li key={index} className="movie-item">

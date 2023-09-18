@@ -39,7 +39,7 @@ function MovieList() {
 
           Promise.all(moviesWithPosters)
             .then((moviesWithUpdatedPosters) => {
-              setMovies(moviesWithUpdatedPosters.slice(0, 10) || []);
+              setMovies(moviesWithUpdatedPosters.slice(0, 20) || []);
               setLoading(false);
             });
         } else {

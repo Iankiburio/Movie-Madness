@@ -9,7 +9,7 @@ function NavBar() {
         <Link to="/upcoming">Upcoming</Link>
       </li>
       <li>
-        <Link to="/new-releases">New Releases</Link>
+        <Link to="/toprated">Top Rated</Link>
       </li>
       <li>
         <Link to="/watchlist">My Watchlist</Link>
