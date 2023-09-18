@@ -33,7 +33,7 @@ const MovieSearch = ({ onSearch }) => {
       }));
 
       setSuggestions(newSuggestions);
-      onSearch(searchTerm); // Call onSearch with the searchTerm
+      onSearch(searchTerm); 
     } catch (error) {
       console.error('Error fetching suggestions:', error);
     }
@@ -41,7 +41,7 @@ const MovieSearch = ({ onSearch }) => {
 
   const handleMovieSelected = (event, { suggestion }) => {
     event.preventDefault();
-    history.push(`/movie/${suggestion.id}`); // Update the path here
+    history.push(`/movie/${suggestion.id}`); 
   };
 
   const handleInputChange = (e, { newValue }) => {

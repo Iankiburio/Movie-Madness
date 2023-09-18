@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './upcoming.css';
 
 function TopRatedPage() {
@@ -27,6 +28,7 @@ function TopRatedPage() {
 
   return (
     <div>
+       <Link to="/" className="home-button">Go Home</Link>
       <h2 className='upcoming'>Top Rated Movies</h2>
       <div className='movies-container'>
         {topRatedMovies.map((movie) => (

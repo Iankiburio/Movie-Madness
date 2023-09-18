@@ -82,8 +82,6 @@ function MovieList() {
                 }))
               );
               setLoading(false);
-
-              // Show recently searched movies when a search is performed
               setShowRecentlySearched(true);
             });
         } else {
@@ -131,7 +129,6 @@ function MovieList() {
 
       {showRecentlySearched && (
         <div className="recently-searched">
-          {/* Add your code to display recently searched movies here */}
         </div>
       )}
     </div>

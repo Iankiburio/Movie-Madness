@@ -1,6 +1,7 @@
 import React, { useEffect, useState,useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './MovieMadness.css';
 
 import AppContext from './context/AppContext';
@@ -27,19 +28,8 @@ function MovieDetails() {
   }, [id]);
 
 
-    // Function to add the current movie to the watchlist
+    
     const addToWatchlist = (movie) => {
-      // const watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
-      
-      // // Check if the movie is already in the watchlist to avoid duplicates
-      // if (!watchlist.some((movie) => movie.id === id)) {
-      //   watchlist.push({ id, title: movie.title });
-      //   localStorage.setItem('watchlist', JSON.stringify(watchlist));
-      //   alert('Movie added to your watchlist!');
-      // } else {
-      //   alert('This movie is already in your watchlist.');
-      // }
-      // history.push('/watchlist');
       let found=false
       for(let i=0;i<watchList.length;i++){
         let doc=watchList[i]
@@ -58,7 +48,9 @@ function MovieDetails() {
     console.log(watchList)
 
   return (
+   
     <div className="movie-details">
+      <div><Link to="/" className="home-button">Go Home</Link></div>
       <h1 className="movie-details__title">Movie Details</h1>
       {movie ? (
         <div className="movie-details__content">
@@ -77,7 +69,6 @@ function MovieDetails() {
               Actors: {movie.cast.map((actor) => actor.name).join(', ')}
             </p>
           )}
-          {/* Add any other necessary details */}
           <img
             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             alt={movie.title}

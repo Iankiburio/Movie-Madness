@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import AppContext from './context/AppContext';
+import { Link } from 'react-router-dom';
 import './upcoming.css';
 
 
@@ -9,6 +10,7 @@ const Watchlist = () => {
 
   return (
     <div>
+      <Link to="/" className="home-button">Go Home</Link>
       <h2 className='watchlist'>My Watchlist</h2>
       <ul className="movie-list">
         {watchList.map((movie, index) => (
